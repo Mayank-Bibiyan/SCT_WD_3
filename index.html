@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="game-box">
+
+            <h1>🎮 Tic Tac Toe</h1>
+
+            <p class="subtitle">
+                Play with your friend or challenge the computer!
+            </p>
+
+            <div class="status" id="status">
+                Player X's Turn
+            </div>
+
+            <!-- Game Modes -->
+            <div class="mode-select">
+
+                <button id="friendMode" class="mode-btn">
+                    👥 Friend Mode
+                </button>
+
+                <button id="aiMode" class="mode-btn">
+                    🤖 AI Mode
+                </button>
+
+            </div>
+
+            <!-- Game Board -->
+            <div class="board">
+
+                <button class="cell" data-index="0"></button>
+                <button class="cell" data-index="1"></button>
+                <button class="cell" data-index="2"></button>
+
+                <button class="cell" data-index="3"></button>
+                <button class="cell" data-index="4"></button>
+                <button class="cell" data-index="5"></button>
+
+                <button class="cell" data-index="6"></button>
+                <button class="cell" data-index="7"></button>
+                <button class="cell" data-index="8"></button>
+
+                <!-- Winning Line -->
+                <div id="win-line"></div>
+
+            </div>
+
+            <!-- Restart Button -->
+            <button id="restartBtn" class="restart-btn">
+                🔄 Restart Game
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

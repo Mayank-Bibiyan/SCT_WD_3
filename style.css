@@ -1,0 +1,288 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at 15% 20%, rgba(255,182,193,.35), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(173,216,230,.35), transparent 25%),
+    radial-gradient(circle at 50% 85%, rgba(221,160,221,.35), transparent 30%),
+    linear-gradient(
+        135deg,
+        #f8f4ff,
+        #eaf7ff,
+        #fff6ea
+    );
+
+    background-size:300% 300%;
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container{
+    width:100%;
+    max-width:430px;
+}
+
+/* =========================
+   GAME BOX
+========================= */
+.game-box{
+    background:rgba(255,255,255,.78);
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.6);
+
+    border-radius:28px;
+
+    padding:22px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
+}
+
+/* =========================
+   HEADING
+========================= */
+h1{
+    color:#34495e;
+    font-size:2.4rem;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    color:#777;
+    font-size:.9rem;
+    margin-bottom:18px;
+}
+
+/* =========================
+   STATUS
+========================= */
+.status{
+    font-size:1.1rem;
+    font-weight:600;
+    color:#555;
+    margin-bottom:18px;
+}
+
+/* =========================
+   MODE BUTTONS
+========================= */
+.mode-select{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.mode-btn{
+    border:none;
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #74b9ff,
+        #a29bfe
+    );
+
+    color:white;
+
+    font-weight:600;
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.mode-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   BOARD
+========================= */
+.board{
+    position:relative;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+
+    justify-items:center;
+
+    margin:20px auto 25px;
+}
+
+/* =========================
+   CELLS
+========================= */
+.cell{
+    width:85px;
+    height:85px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#ffffff;
+
+    font-size:2.7rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+    transition:.25s;
+}
+
+.cell:hover{
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+    0 10px 20px rgba(116,185,255,.25);
+}
+
+/* =========================
+   X & O COLORS
+========================= */
+.x{
+    color:#00c9a7;
+}
+
+.o{
+    color:#ff6b81;
+}
+
+/* =========================
+   WINNING LINE
+========================= */
+#win-line{
+    position:absolute;
+
+    height:6px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #00c9a7,
+        #4facfe
+    );
+
+    box-shadow:
+    0 0 10px rgba(0,201,167,.5),
+    0 0 20px rgba(79,172,254,.4);
+
+    width:0;
+    opacity:0;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:all .4s ease;
+
+    z-index:10;
+    pointer-events:none;
+}
+
+/* =========================
+   RESTART BUTTON
+========================= */
+.restart-btn{
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        #4facfe,
+        #a29bfe
+    );
+
+    color:white;
+
+    font-size:1rem;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.restart-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 20px rgba(79,172,254,.25);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:500px){
+
+    .container{
+        max-width:370px;
+    }
+
+    .cell{
+        width:75px;
+        height:75px;
+        font-size:2.2rem;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    .mode-select{
+        flex-direction:column;
+    }
+
+    .mode-btn{
+        width:100%;
+    }
+}
